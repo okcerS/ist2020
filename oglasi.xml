@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE Oglasi SYSTEM "oglasi.dtd">
+
+<Oglasi xmlns="http://www.w3schools.com"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.w3schools.com oglasi.xsd">
+    <Oglas>
+        <Kategorija>
+            Alati
+        </Kategorija>
+        <DatumIsteka>   
+            <Dan>28</Dan>
+            <Mesec>2</Mesec>
+            <Godina>2021</Godina>
+        </DatumIsteka>
+        <Cena valuta='EUR'>
+            100
+        </Cena>
+        <Tekst>
+            Stihl motorna testera u dobrom stanju, za više informacija poziv. Strugara Panj, Ranilović.
+        </Tekst>
+        <Oznaka>
+            Stihl motorna testera
+        </Oznaka>
+        <Email tip='sluzbeni'>strugara@panj.rs</Email>
+    </Oglas>
+    <Oglas>
+    <Oglas>
+        <Kategorija>
+            Automobili
+        </Kategorija>
+        <DatumIsteka>   
+            <Dan>30</Dan>
+            <Mesec>1</Mesec>
+            <Godina>2021</Godina>
+        </DatumIsteka>
+        <Cena valuta='EUR'>
+            5500
+        </Cena>
+        <Tekst>
+            Prodajem auto VW Golf 6 u dobrom stanju, sve kao na slici. Kontakt pozivom nakon 12h.
+        </Tekst>
+        <Oznaka>
+            Volkswagen Golf 6
+        </Oznaka>
+        <Email tip='privatni'>okcers97@gmail.com</Email>
+        <Email tip='sluzbeni'>srecko.krsman@gmail.com</Email>
+    </Oglas>
+</Oglasi>
