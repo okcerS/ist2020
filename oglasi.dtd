@@ -1,12 +1,12 @@
 <!ELEMENT Oglasi (Oglas)+>
-<!ELEMENT Oglas (Kategorija, DatumIsteka, Cena, Tekst, Oznaka, Email)>
+<!ELEMENT Oglas (Kategorija, DatumIsteka, Cena, Tekst, (Oznaka)+, (Email)+)>
 <!ELEMENT Kategorija (Automobili|Alati|Stanovi|Poducavanje|Ostalo)>
 <!ELEMENT DatumIsteka (Dan, Mesec, Godina)>
 <!ELEMENT Dan (#PCDATA)>
 <!ELEMENT Mesec (#PCDATA)>
 <!ELEMENT Godina (#PCDATA)>
 <!ELEMENT Cena (#PCDATA)>
-<!ATTLIST Cena (#PCDATA)>
+<!ATTLIST Cena valuta (DIN|EUR) "DIN">
 <!ELEMENT Tekst (#PCDATA)>
 <!ELEMENT Oznaka (#PCDATA)>
 <!ELEMENT Email (#PCDATA)>
