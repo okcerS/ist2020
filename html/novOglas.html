@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Novi Oglas</title>
+</head>
+<body>
+    <header class="header">
+            <div class="container">
+                <nav>
+                    <a href="/oglasi">Početna</a>
+                    <a class='active' href="/noviOglas">Novi Oglas</a>
+                    <a href="/izmeniOglas">Izmeni Oglas</a>
+                </nav>
+            </div>
+
+    </header>
+    <div class="container">
+        <h1 style='text-align: center; margin-bottom: 12px'>Novi Oglas</h1>
+        <form id='forma'  method='POST'>
+            <div class="formEl" id='kategorija'>
+                <!-- <label>Kategorija:</label> <input type="text" name="kategorija" required> -->
+            </div>
+            <div class="formEl">
+                <label>Cena:</label> <input type="number" name="cena" min=0 required>
+            </div>
+
+            <div class="formEl">
+               <label>Valuta: </label> 
+               <span style='display: inline-block; text-align: left;'>
+                <input type="radio" class="valuta-radio" checked name='valuta' value='DIN'>DIN
+                <input type="radio" class="valuta-radio" name='valuta' value='EUR'>EUR
+               </span>
+              
+            </div>
+            <div class="formEl">
+                <label>Oznaka:</label> <input type="text" id='oznaka' name="oznaka"  required>
+            </div>
+            <div class="formEl">
+                <label>Datum isteka oglasa:</label> <input type="date" name="datumIstekaOglasa" required>
+            </div>
+            <div class="formEl">
+                <label>E-mail adresa:</label> <input type="email" multiple name="email" placeholder="pera.peric@gmail.com"  required>
+            </div>
+            <div class="formEl">
+                <textarea name="tekst" id='textarea' cols="60" rows="10" placeholder="Unesite tekst oglasa. Napomena: Ne koristiti pretežno velika slova jer takvi oglasi odbijaju posetioce." required></textarea>
+            </div>
+
+            <div class="formEl">
+                <button class='btn' type='submit'>Dodaj Oglas</button>
+            </div>
+        
+        </form>
+
+    </div>
+
+</body>
+</html>
