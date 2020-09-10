@@ -54,6 +54,7 @@
   </xs:element>
   
   <xs:element name="Godina" type="xs:integer" />
+
   <xs:element name="Cena">
     <xs:complexType>
       <xs:simpleContent>
@@ -71,7 +72,45 @@
     </xs:complexType>
   </xs:element>
 
+    <xs:simpleType name="cenaPozitivna">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
 
+  <xs:element name="Tekst">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="10"/>
+        <xs:maxLength value="180"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="Oznaka" type="xs:string" />
+  
+  <xs:element name="Email">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="mailValidacija">
+          <xs:attribute name="tip" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="privatni" />
+                <xs:enumeration value="sluzbeni" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="mailValidacija">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-z0-9]{5,25}@[a-z]{4,8}.com"/>
+    </xs:restriction>
+  </xs:simpleType>
 
 
   
