@@ -1,1 +1,44 @@
-{\rtf1}
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.w3schools.com" elementFormDefault="qualified" targetNamespace="http://www.w3schools.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.w3schools.com" elementFormDefault="qualified" targetNamespace="http://www.w3schools.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Oglasi">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="Oglas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+ 
+ <xs:element name="Oglas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Kategorija" />
+        <xs:element ref="DatumIsteka" />
+        <xs:element ref="Cena" />
+        <xs:element ref="Tekst" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Oznaka" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Email" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+   <xs:element name="Kategorija" type="xs:string" />
+  <xs:element name="DatumIsteka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Dan" />
+        <xs:element ref="Mesec" />
+        <xs:element ref="Godina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element> 
+
+
+
+
+
+
+  
+</xs:schema>
