@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Novi Oglas</title>
+    <title>Nov Oglas</title>
 
     <style>
         
@@ -17,6 +17,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         .header{
             background: rgb(68, 65, 66);
             margin-bottom: 12px;
@@ -36,6 +37,7 @@
         .container{
             padding: 18px;
         }
+
         form {
             margin: 0 auto;
             width: 60%;
@@ -105,14 +107,14 @@
             <div class="container">
                 <nav>
                     <a href="/oglasi">Početna</a>
-                    <a class='active' href="/noviOglas">Novi Oglas</a>
+                    <a class='active' href="/novOglas">Nov Oglas</a>
                     <a href="/izmeniOglas">Izmeni Oglas</a>
                 </nav>
             </div>
     </header>
 
     <div class="container">
-        <h1 style='text-align: center; margin-bottom: 12px'>Novi Oglas</h1>
+        <h1 style='text-align: center; margin-bottom: 12px'>Nov Oglas</h1>
         <form id='forma'  method='POST'>
             <div class="formEl" id='kategorija'>
             </div>
@@ -173,7 +175,7 @@
             };
 
             $.ajax({
-                url:'/novi-oglas',
+                url:'/nov-oglas',
                 type: 'POST',
                 dataType: 'json',
                 data: data,
