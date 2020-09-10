@@ -17,6 +17,7 @@
         </div>
 
     </header>
+    
     <div class="container">
         <form>
             <div class="formEl">
@@ -27,5 +28,85 @@
         <div class="oglasi">
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+         let tekst = document.getElementById('tekst');
+
+         tekst.addEventListener('input', function(e){
+            data = {
+             tekst: this.value
+            };
+
+            $.ajax({
+                url:'/api/filtriranje',
+                type: 'POST',
+                data: data,
+                dataType: 'json',
+                success: function(response){
+                    prikazPodataka(response);
+                }
+            });
+         });
+            
+
+         $(document).ready(function(){
+            $.ajax({
+                url:'/api/svi-oglasi',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response){
+                    prikazPodataka(response);
+                }
+            });
+        });
+       
+        function prikazPodataka(response){
+            let div = document.querySelector(".oglasi");
+            div.innerHTML = "";
+
+            let html = `
+                <table>
+                    <thead>
+                        <tr style='background: #fff'>
+                            <th>Kategorija</th>
+                            <th>Tekst oglasa</th>
+                            <th>Cena</th>
+                            <th>Valuta</th>
+                            <th>Oznaka</th>
+                            <th>Datum isteka oglasa</th>
+                            <th>E-mail adresa</th>
+                            <th>Brisanje</th>
+                        </tr>
+                    <thead>
+                    <tbody>
+            `;
+            for(let o of response){
+                html += `
+                    <tr>
+                        <td>${o.kategorija}</td>
+                        <td>${o.tekst}</td>
+                        <td>${o.cena}</td>
+                        <td>${o.valuta}</td>
+                        <td>${o.oznaka}</td>
+                        <td>${o.datumIstekaOglasa}</td>
+                        <td>${o.email}</td>
+                        <td>
+                            <form action='/obrisi-oglas' method='POST'>
+                                <input type='hidden' name='id' value='${o.id}'>
+                                <button class='btnObrisi' type='submit'>Obriši oglas</td>
+                            </form>
+                        </td>
+                    </tr>
+                `;
+            }
+            html += `
+                    </tbody>
+                </table>
+            `;
+            div.innerHTML = html;
+        }
+    </script>
 </body>
 </html>
