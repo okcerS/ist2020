@@ -179,3 +179,70 @@ http.createServer(function (req, res){
     }
 
 }).listen(5500);
+
+function sviOglasi(){
+    return oglasi;
+}
+
+function sveKategorije() {
+    return kategorije;
+}
+
+function nadjiOglas(id) {
+    for(let i=0;i<oglasi.length;i++){
+        if(oglasi[i].id === id){
+            return oglasi[i];
+        }
+    }
+}
+
+function filtrirajOglase(tekst) {
+    let pomocni = []
+    for(let i=0;i<oglasi.length;i++){
+        if(oglasi[i].tekst.toLowerCase().includes(tekst.trim().toLowerCase()) || oglasi[i].kategorija.toLowerCase().includes(tekst.trim().toLowerCase()) || oglasi[i].oznaka.toLowerCase().includes(tekst.trim().toLowerCase()) ){
+            pomocni.push(oglasi[i])
+        }
+    }
+
+    return pomocni;
+}
+
+function izmeniOglas(id, kategorija, datumIstekaOglasa, tekst, oznaka, cena, email, valuta){
+   
+    for(let i=0;i<oglasi.length;i++){
+        if(oglasi[i].id == id){
+            oglasi[i].kategorija = kategorija;
+            oglasi[i].datumIstekaOglasa = datumIstekaOglasa;
+            oglasi[i].tekst = tekst;
+            oglasi[i].oznaka = oznaka;
+            oglasi[i].cena = cena;
+            oglasi[i].valuta = valuta;
+            oglasi[i].email = email;
+        }
+    }
+
+}
+function obrisiOglas(id){
+    let pomocni = []
+    for(let i=0;i<oglasi.length;i++){
+        if(oglasi[i].id != id){
+            pomocni.push(oglasi[i])
+        }
+    }
+    oglasi = pomocni;
+    return oglasi;
+}
+function noviOglas(kategorija, datumIstekaOglasa, tekst, oznaka, cena, email, valuta){
+    let oglas =   {
+        "id": ID++,
+        "kategorija": kategorija,
+        "datumIstekaOglasa": datumIstekaOglasa,
+        "tekst":  tekst,
+        "oznaka": oznaka,
+        "cena": cena,
+        "valuta": valuta,
+        "email": email
+    };
+
+    oglasi.push(oglas);
+}
