@@ -111,6 +111,71 @@ http.createServer(function (req, res){
             });
         }
     }
+    else if(req.method == "POST") {
+        if (urlObj.pathname == "/izmeni-oglas"){
+            var body = '';
+                req.on('data', function (data) {
+                body += data;
+            });
+            req.on('end', function () {
+                izmeniOglas(parseInt(querystring.parse(body).id),querystring.parse(body).kategorija, querystring.parse(body).datumIstekaOglasa, querystring.parse(body).tekst, querystring.parse(body).oznaka, querystring.parse(body).cena, querystring.parse(body).email, querystring.parse(body).valuta)
+                res.writeHead(302, {
+                    'Location': '/izmeniOglas'
+                });
+                res.end()
+            });
+        }
 
+        if (urlObj.pathname == "/pripremi-oglas"){
+            var body = '';
+                req.on('data', function (data) {
+                body += data;
+            });
+            req.on('end', function () {
+                res.writeHead(200);
+                data = nadjiOglas(parseInt(querystring.parse(body).id));
+                data['kategorije'] = sveKategorije();
+                res.end(JSON.stringify(data))
+            });
+        }
+
+        if (urlObj.pathname == "/api/filtriranje"){
+            var body = '';
+                req.on('data', function (data) {
+                body += data;
+            });
+            req.on('end', function () {
+                res.writeHead(200);
+                res.end(JSON.stringify(filtrirajOglase(querystring.parse(body).tekst)))
+            });
+        }
+
+        if (urlObj.pathname == "/obrisi-oglas"){
+            var body = '';
+                req.on('data', function (data) {
+                body += data;
+            });
+            req.on('end', function () {
+                obrisiOglas(parseInt(querystring.parse(body).id));
+                res.writeHead(302, {
+                    'Location': '/oglasi'
+                });
+                res.end();
+            });
+        }
+        if (urlObj.pathname == "/novi-oglas"){
+            var body = '';
+                req.on('data', function (data) {
+                body += data;
+            });
+            req.on('end', function () {
+                noviOglas(querystring.parse(body).kategorija,
+                           querystring.parse(body).datumIstekaOglasa,querystring.parse(body).tekst, querystring.parse(body).oznaka, querystring.parse(body).cena, querystring.parse(body).email, querystring.parse(body).valuta);
+
+                res.writeHead(200);
+                res.end(JSON.stringify('/oglasi'));
+            });
+        }
+    }
 
 }).listen(5500);
