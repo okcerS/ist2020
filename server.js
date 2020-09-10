@@ -99,8 +99,8 @@ http.createServer(function (req, res){
                 res.end(data);
             });
         }
-        if (urlObj.pathname == "/noviOglas"){
-            fs.readFile(PATH + "noviOglas.html", function (err,data){
+        if (urlObj.pathname == "/novOglas"){
+            fs.readFile(PATH + "novOglas.html", function (err,data){
                 if (err){
                     res.writeHead(404);
                     res.end(JSON.stringify(err));
@@ -163,13 +163,13 @@ http.createServer(function (req, res){
                 res.end();
             });
         }
-        if (urlObj.pathname == "/novi-oglas"){
+        if (urlObj.pathname == "/nov-oglas"){
             var body = '';
                 req.on('data', function (data) {
                 body += data;
             });
             req.on('end', function () {
-                noviOglas(querystring.parse(body).kategorija,
+                novOglas(querystring.parse(body).kategorija,
                            querystring.parse(body).datumIstekaOglasa,querystring.parse(body).tekst, querystring.parse(body).oznaka, querystring.parse(body).cena, querystring.parse(body).email, querystring.parse(body).valuta);
 
                 res.writeHead(200);
@@ -232,7 +232,7 @@ function obrisiOglas(id){
     oglasi = pomocni;
     return oglasi;
 }
-function noviOglas(kategorija, datumIstekaOglasa, tekst, oznaka, cena, email, valuta){
+function novOglas(kategorija, datumIstekaOglasa, tekst, oznaka, cena, email, valuta){
     let oglas =   {
         "id": ID++,
         "kategorija": kategorija,
