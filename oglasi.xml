@@ -46,4 +46,64 @@
         <Email tip='privatni'>okcers97@gmail.com</Email>
         <Email tip='sluzbeni'>srecko.krsman@gmail.com</Email>
     </Oglas>
+      <Oglas>
+        <Kategorija>
+            Stanovi
+        </Kategorija>
+        <DatumIsteka>   
+            <Dan>25</Dan>
+            <Mesec>9</Mesec>
+            <Godina>2020</Godina>
+        </DatumIsteka>
+        <Cena valuta='EUR'>
+            75000
+        </Cena>
+        <Tekst>
+            Prodajem namešten stan u Beogradu kod Fontane, 43m2, stara gradnja, pogodan za izdavanje studentima. Kontakt porukom ili pozivom.
+        </Tekst>
+        <Oznaka>
+            stan Novi Beograd Prodaja
+        </Oznaka>
+        <Email tip='privatni'>xxdoomslayerxx@yahoo.com</Email>
+    </Oglas>
+    <Oglas>
+        <Kategorija>
+            Nameštaj
+        </Kategorija>
+        <DatumIsteka>   
+            <Dan>3</Dan>
+            <Mesec>10</Mesec>
+            <Godina>2020</Godina>
+        </DatumIsteka>
+        <Cena>
+            11000
+        </Cena>
+        <Tekst>
+            Radni sto dimenzija 140x75x60 bez ogrebotina
+        </Tekst>
+        <Oznaka>
+            radni sto
+        </Oznaka>
+        <Email tip='sluzbeni'>namestaj.rade@hotmail.com</Email>
+    </Oglas>
+    <Oglas>
+        <Kategorija>
+            Poducavanje
+        </Kategorija>
+        <DatumIsteka>   
+            <Dan>13</Dan>
+            <Mesec>10</Mesec>
+            <Godina>2020</Godina>
+        </DatumIsteka>
+        <Cena>
+            2000
+        </Cena>
+        <Tekst>
+            Dajem časove engleskog jezika deci do 12 godina. Cena 2000din za dvočas (1h30min).
+        </Tekst>
+        <Oznaka>
+            časovi engleski
+        </Oznaka>
+        <Email tip='privatni'>nauciengleskilako@gmail.com</Email>
+    </Oglas>
 </Oglasi>
