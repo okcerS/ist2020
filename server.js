@@ -1,4 +1,8 @@
-
+const fs = require('fs');
+const http = require('http');
+const url = require('url');
+const querystring = require('querystring');
+const PATH = "html/";
 
 const kategorije = ["Automobili", "Alati", "Nameštaj", "Ostalo", "Poducavanje", "Stanovi"];
 
@@ -57,3 +61,56 @@ let oglasi = [
     }
 ];
 
+http.createServer(function (req, res){    
+    let urlObj = url.parse(req.url,true,false);
+    
+    if (req.method == "GET"){
+        if (urlObj.pathname == "/oglasi" || urlObj.pathname == "/"){ 
+            fs.readFile(PATH + "oglasi.html", function (err,data){
+                if (err){
+                    res.writeHead(404);
+                    res.end(JSON.stringify(err));
+                    return;
+                }
+                res.writeHead(200);
+                res.end(data);
+            });
+        }
+        if (urlObj.pathname == "/api/svi-oglasi"){ 
+            res.writeHead(200);
+            data = JSON.stringify(sviOglasi());
+            res.end(data);
+        }
+
+        if(urlObj.pathname == '/api/kategorije') {
+            res.writeHead(200);
+            data = JSON.stringify(sveKategorije());
+            res.end(data);
+        }
+
+        if (urlObj.pathname == "/izmeniOglas"){
+            fs.readFile(PATH + "izmeniOglas.html", function (err,data){
+                if (err){
+                    res.writeHead(404);
+                    res.end(JSON.stringify(err));
+                    return;
+                }
+                res.writeHead(200);
+                res.end(data);
+            });
+        }
+        if (urlObj.pathname == "/noviOglas"){
+            fs.readFile(PATH + "noviOglas.html", function (err,data){
+                if (err){
+                    res.writeHead(404);
+                    res.end(JSON.stringify(err));
+                    return;
+                }
+                res.writeHead(200);
+                res.end(data);
+            });
+        }
+    }
+
+
+}).listen(5500);
