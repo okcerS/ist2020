@@ -5,7 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Novi Oglas</title>
+
+    <style>
+        
+        body {
+            background: #e6e4e4;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header{
+            background: rgb(68, 65, 66);
+            margin-bottom: 12px;
+        }
+
+        .header nav a {
+            color: #fff;
+            padding-right: 50px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .header a:hover{
+            color: rgb(1, 115, 230);
+        }
+
+        .container{
+            padding: 18px;
+        }
+        form {
+            margin: 0 auto;
+            width: 60%;
+            text-align: left;
+            padding: 15px;
+            color: rgb(0, 0, 0);
+            background: rgb(199, 198, 198);
+            border-radius: 3px;
+            border: 2px solid black;
+        }
+
+        .formEl {
+            margin-bottom: 10px;
+            background: #e6e4e4;
+        }
+
+        .formEl > *:not(textarea){
+            width: 250px;
+            padding: 10px;
+        }
+
+        .formEl label {
+            font-weight: bold;
+            display: inline-block;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        form input {
+            padding: 10px;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+        }
+
+        #textarea{
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .btn {
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            padding: 12px 22px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            border: 1px solid rgb(36, 89, 204);
+        }
+
+        .btn:hover {
+            background: rgb(36, 89, 204);
+            color: #fff;
+        }
+
+        .active {
+            color: rgb(72, 104, 173) !important;
+        }
+    </style>
 </head>
+
 <body>
     <header class="header">
             <div class="container">
@@ -108,7 +202,7 @@
                     html += `</select>`;
                     kategorija.innerHTML = html;
             }
-            
+
     </script>
 </body>
 </html>
