@@ -25,7 +25,6 @@
         <Email tip='sluzbeni'>strugara@panj.rs</Email>
     </Oglas>
     <Oglas>
-    <Oglas>
         <Kategorija>
             Automobili
         </Kategorija>
@@ -46,7 +45,7 @@
         <Email tip='privatni'>okcers97@gmail.com</Email>
         <Email tip='sluzbeni'>srecko.krsman@gmail.com</Email>
     </Oglas>
-      <Oglas>
+    <Oglas>
         <Kategorija>
             Stanovi
         </Kategorija>

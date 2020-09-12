@@ -128,8 +128,8 @@ http.createServer(function (req, res){
 
         if (urlObj.pathname == "/pripremi-oglas"){
             var body = '';
-                req.on('data', function (data) {
-                body += data;
+            req.on('data', function (data) {
+            body += data;
             });
             req.on('end', function () {
                 res.writeHead(200);
@@ -163,6 +163,7 @@ http.createServer(function (req, res){
                 res.end();
             });
         }
+        
         if (urlObj.pathname == "/nov-oglas"){
             var body = '';
                 req.on('data', function (data) {
@@ -203,7 +204,6 @@ function filtrirajOglase(tekst) {
             pomocni.push(oglasi[i])
         }
     }
-
     return pomocni;
 }
 
